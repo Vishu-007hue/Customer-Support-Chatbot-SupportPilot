@@ -1,0 +1,231 @@
+:root {
+  --bg: #09090b;
+  --panel: #17171c;
+  --panel-soft: #202028;
+  --muted: #a1a1aa;
+  --text: #f4f4f5;
+  --accent: #9ca3af;
+  --border: #2e2f36;
+  --ok: #22c55e;
+  --warn: #f59e0b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(150deg, #050508 0%, #101116 45%, #1b1d25 100%);
+}
+
+.app {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.panel {
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 16px;
+}
+
+.hero h1 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.small {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.grid-2 {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.auth-card {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: #0f1014;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 11px 12px;
+}
+
+button {
+  border: 1px solid var(--border);
+  background: var(--panel-soft);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+button.primary {
+  background: linear-gradient(90deg, #3f3f46, #52525b);
+  border: none;
+}
+
+button.ghost {
+  background: transparent;
+}
+
+.chat-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 14px;
+}
+
+.messages {
+  height: 360px;
+  overflow-y: auto;
+  background: #0d0e12;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.msg {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+}
+
+.msg.user {
+  background: rgba(156, 163, 175, 0.12);
+  border-color: rgba(156, 163, 175, 0.24);
+}
+
+.msg.bot {
+  background: rgba(63, 63, 70, 0.35);
+  border-color: rgba(82, 82, 91, 0.35);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.card {
+  background: #111218;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.card .value {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.status-ok {
+  color: var(--ok);
+}
+
+.status-warn {
+  color: var(--warn);
+}
+
+.help-text {
+  margin-top: 10px;
+  border-left: 3px solid #52525b;
+  padding-left: 10px;
+  color: #d4d4d8;
+}
+
+.toast-wrap {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.toast {
+  min-width: 220px;
+  max-width: 320px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #111218;
+  color: var(--text);
+  padding: 10px 12px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+.toast.success {
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+.toast.error {
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.toast.info {
+  border-color: rgba(156, 163, 175, 0.5);
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .chat-layout {
+    grid-template-columns: 1fr;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
